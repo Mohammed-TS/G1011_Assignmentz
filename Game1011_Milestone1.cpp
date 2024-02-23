@@ -27,6 +27,15 @@ public:
   int health;
 
   // TODO: Getters and setters for name and health
+
+  int getHealth() const 
+  { 
+      return health; 
+  }
+  void setHealth(int currentHealth) 
+  { 
+      health = currentHealth; 
+  }
 };
 
 class Wizard : public Player
@@ -64,7 +73,7 @@ public:
 class Orc : public Enemy
 {
 public:
-  static const std::string SPECIES_NAME;
+  static const std::string Red_Orc;
   /* Same thing goes here */
 
   std::vector<std::string> taunts; //= {"Noob!", "Something like this"}
@@ -74,34 +83,35 @@ public:
   {
     // Choose a random taunt from the array and print it
 
-    // int randomIndex = rand() % taunts.size();
-    // std::cout << "Orc taunts: " << taunts[randomIndex] << std::endl;
+    int randomIndex = rand() % taunts.size();
+    std::cout << "The Orc taunts: " << taunts[randomIndex] << std::endl;
 
     /* This will print a random taunt */
   }
 
   void normalAttack() override
   {
-    // Implement normal attack using attackPower
+    // Implement normal attack using attackPower 
+      std::cout << " The Orc attacks and deals: " << attackPower << " damage" << std::endl;
   }
 };
 
 class Undead : public Enemy
 {
 public:
-  static const std::string SPECIES_NAME;
-  /* Same thing goes here */
+  static const std::string Litch;
 
   std::vector<std::string> taunts;
   int darkMagicPower;
 
   void tauntPlayer() override
   {
-    // Choose a random taunt from the array and print it
+      int randomIndex = rand() % taunts.size();
+      std::cout << "The Undead taunts: " << taunts[randomIndex] << std::endl;
   }
 
   void normalAttack() override
   {
-    // Implement normal attack using darkMagicPower
+      std::cout << " The Undead attacks with dark magic and deals: " << darkMagicPower << " damage" << std::endl;
   }
 };
