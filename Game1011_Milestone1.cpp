@@ -12,19 +12,21 @@ public:
 
 class Player : public GameObject
 {
-public:
-  virtual void specialAttack() = 0;
+private:
   std::string name;
   int health;
+public:
+  virtual void specialAttack() = 0;
 
   // TODO: Getters and setters for name and health
 };
 
 class Enemy : public GameObject
 {
+private:
+  int health;
 public:
   virtual void tauntPlayer() = 0;
-  int health;
 
   // TODO: Getters and setters for name and health
 
