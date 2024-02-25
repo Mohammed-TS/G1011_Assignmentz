@@ -20,6 +20,7 @@ class Player : public GameObject
 private:
   std::string name;
   int health;
+  static std::string SPECIAL_ATTACK_NAME;
 public:
   virtual void specialAttack() = 0;
 
@@ -44,8 +45,7 @@ public:
 class Wizard : public Player
 {
 public:
-  static std::string SPECIAL_ATTACK_NAME;
-  const std::string Wizard::SPECIAL_ATTACK_NAME = "Magic Missile"; 
+  static const std::string SPECIAL_ATTACK_NAME;
   int magicPower;
 
   void specialAttack() override
@@ -59,7 +59,6 @@ class Knight : public Player
 {
 public:
   static const std::string SPECIAL_ATTACK_NAME;
-  const std::string Wizard::SPECIAL_ATTACK_NAME = "Sword Slash";
 
   int strength;
 
@@ -115,3 +114,8 @@ public:
       std::cout << " The Undead attacks with dark magic and deals: " << darkMagicPower << " damage" << std::endl;
   }
 };
+
+int main()
+{
+  //For Assignment 1
+}
