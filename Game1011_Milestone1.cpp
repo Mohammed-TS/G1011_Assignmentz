@@ -18,7 +18,25 @@ private:
 public:
   virtual void specialAttack() = 0;
 
-  // TODO: Getters and setters for name and health
+  // TODO: Getters and setters for name and health 
+
+  std::string getName() const
+  {
+    return name;
+  }
+  void setName(int currentName) 
+  {
+    name = currentName; 
+  }
+
+  int getHealth() const 
+  {
+    return health;
+  }
+  void setHealth(int currentHealth)
+  {
+    health = currentHealth;
+  }
 };
 
 class Enemy : public GameObject
