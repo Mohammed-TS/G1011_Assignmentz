@@ -46,6 +46,7 @@ class Wizard : public Player
 {
 public:
   static const std::string SPECIAL_ATTACK_NAME;
+  
   int magicPower;
 
   void specialAttack() override
@@ -59,6 +60,7 @@ class Knight : public Player
 {
 public:
   static const std::string SPECIAL_ATTACK_NAME;
+
 
   int strength;
 
