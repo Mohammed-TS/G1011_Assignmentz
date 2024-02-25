@@ -50,7 +50,7 @@ public:
 
   void specialAttack() override
   {
-    std :: cout << "fires" << SPECIAL_ATTACK_NAME << "for" << magicPower << "DAMAGE!" << std::endl; 
+    std :: cout << "Fire" << SPECIAL_ATTACK_NAME << "for" << magicPower << "DAMAGE!" << std::endl; 
     // Implement magic missile attack using magicPower
   }
 };
