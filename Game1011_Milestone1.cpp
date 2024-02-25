@@ -44,8 +44,8 @@ public:
 class Wizard : public Player
 {
 public:
-  static std::string SPECIAL_ATTACK_NAME;
-  const std::string Wizard::SPECIAL_ATTACK_NAME = "Magic Missile"; 
+  static const std::string SPECIAL_ATTACK_NAME;
+  
   int magicPower;
 
   void specialAttack() override
@@ -59,7 +59,7 @@ class Knight : public Player
 {
 public:
   static const std::string SPECIAL_ATTACK_NAME;
-  const std::string Wizard::SPECIAL_ATTACK_NAME = "Sword Slash";
+
 
   int strength;
 
