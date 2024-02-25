@@ -1,6 +1,6 @@
 // TODO: Milestone 1 - Game 1011
 // Student Name: Rumaisa Shoukat ID: 101524730
-// Student Name: Mohammed Thanaparambil Siraj ID: 
+// Student Name: Mohammed Thanaparambil Siraj ID: 101459931 
 // Student Name: Thomas Watson ID: 
 
 #include <iostream>
@@ -21,23 +21,11 @@ private:
 public:
   virtual void specialAttack() = 0;
 
-  std::string getName() const
-  {
-    return name;
-  }
-  void setName(int currentName) 
-  {
-    name = currentName; 
-  }
+  std::string getName() const {return name;}
+  void setName(int currentName) { name = currentName; }
 
-  int getHealth() const 
-  {
-    return health;
-  }
-  void setHealth(int currentHealth)
-  {
-    health = currentHealth;
-  }
+  int getHealth() const { return health; }
+  void setHealth(int currentHealth) { health = currentHealth; }
 };
 
 class Enemy : public GameObject
@@ -47,14 +35,8 @@ private:
 public:
   virtual void tauntPlayer() = 0;
 
-  int getHealth() const 
-  { 
-      return health; 
-  }
-  void setHealth(int currentHealth) 
-  { 
-      health = currentHealth; 
-  }
+  int getHealth() const { return health; }
+  void setHealth(int currentHealth) { health = currentHealth; }
 };
 
 class Wizard : public Player
