@@ -61,14 +61,12 @@ class Wizard : public Player
 {
 public:
   static std::string SPECIAL_ATTACK_NAME;
-  /*const std::string Wizard::SPECIAL_ATTACK_NAME = "Magic Missile";
-  define this outside class as in class declaration
-  wont work */
-
+  const std::string Wizard::SPECIAL_ATTACK_NAME = "Magic Missile"; 
   int magicPower;
 
   void specialAttack() override
   {
+    std :: cout << "fires" << SPECIAL_ATTACK_NAME << "for" << magicPower << "DAMAGE!" << std::endl; 
     // Implement magic missile attack using magicPower
   }
 };
@@ -77,14 +75,13 @@ class Knight : public Player
 {
 public:
   static const std::string SPECIAL_ATTACK_NAME;
-  /*const std::string Wizard::SPECIAL_ATTACK_NAME = "Sword Slash";
-  define this outside class as in class declaration
-  wont work */
+  const std::string Wizard::SPECIAL_ATTACK_NAME = "Sword Slash";
 
   int strength;
 
   void specialAttack() override
   {
+    std:: cout << "Swing sword for " << SPECIAL_ATTACK_NAME << "BLOWS!" << strength << std:: endl; 
     // Implement sword slash attack using strength
   }
 };
