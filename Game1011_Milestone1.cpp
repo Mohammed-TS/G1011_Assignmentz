@@ -1,10 +1,13 @@
 // TODO: Milestone 1 - Game 1011
+// Student Name: Rumaisa Shoukat ID: 101524730
+// Student Name: Mohammed Thanaparambil Siraj ID: 
+// Student Name: Thomas Watson ID: 
 
 #include <iostream>
 #include <string>
 #include <vector>
 
-class GameObject
+class GameObject 
 {
 public:
   virtual void normalAttack() = 0;
@@ -17,8 +20,6 @@ private:
   int health;
 public:
   virtual void specialAttack() = 0;
-
-  // TODO: Getters and setters for name and health 
 
   std::string getName() const
   {
@@ -45,8 +46,6 @@ private:
   int health;
 public:
   virtual void tauntPlayer() = 0;
-
-  // TODO: Getters and setters for name and health
 
   int getHealth() const 
   { 
