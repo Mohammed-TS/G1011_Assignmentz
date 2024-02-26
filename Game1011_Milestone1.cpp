@@ -51,7 +51,7 @@ public:
 
   void specialAttack() override
   {
-    std :: cout << "Wizard uses" << SPECIAL_ATTACK_NAME << "for" << magicPower << "Damage" << std::endl; 
+    std :: cout << "Wizard uses" << SPECIAL_ATTACK_NAME << "for " << magicPower << " damage" << std::endl; 
     // Implement magic missile attack using magicPower
   }
 };
@@ -66,7 +66,7 @@ public:
 
   void specialAttack() override
   {
-    std:: cout << "Knight uses " << SPECIAL_ATTACK_NAME << "for" << strength << std:: endl; 
+    std:: cout << "Knight uses " << SPECIAL_ATTACK_NAME << "for " << strength << " damage" << std:: endl;
     // Implement sword slash attack using strength
   }
 };
