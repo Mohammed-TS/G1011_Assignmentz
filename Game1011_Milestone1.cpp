@@ -1,123 +1,115 @@
 // TODO: Milestone 1 - Game 1011
-// Student Name: Rumaisa Shoukat ID: 101524730
 // Student Name: Thomas Watson ID: 101474606
-// Student Name: Mohammed Thanaparambil Siraj ID: 101459931 
+// Student Name: Rumaisa Shoukat ID: 101524730
+// Student Name: Mohammed Thanaparambil Siraj ID: 101459931
 
-
+// TODO: Read the code and fill accordingly
+//I have made .cpp and .h files for all the classes, so we don't need to make class definitions.
+//check how the.h and .cpp works. Its the same thing just in 2 diff files, you can start adding 
+                                  // variables to classes in .h & .cpp according to the game structure for player and enemy
+// there are some parts where we need to add new variables to make the game look better.
 
 #include <iostream>
-#include <string>
-#include <vector>
+#include "Player.cpp"
+#include "Enemy.cpp"
+#include "Wizard.cpp"
+#include "Knight.cpp"
+#include "Orc.cpp"
+#include "Undead.cpp"
 
-class GameObject 
-{
-public:
-  virtual void normalAttack() = 0;
-};
-
-class Player : public GameObject
-{
-private:
-  std::string name;
-  int health;
-  static std::string SPECIAL_ATTACK_NAME;
-public:
-  virtual void specialAttack() = 0;
-
-  std::string getName() const {return name;}
-  void setName(int currentName) { name = currentName; }
-
-  int getHealth() const { return health; }
-  void setHealth(int currentHealth) { health = currentHealth; }
-};
-
-class Enemy : public GameObject
-{
-private:
-  int health;
-public:
-  virtual void tauntPlayer() = 0;
-
-  int getHealth() const { return health; }
-  void setHealth(int currentHealth) { health = currentHealth; }
-};
-
-class Wizard : public Player
-{
-public:
-  static const std::string SPECIAL_ATTACK_NAME;
-  
-  int magicPower;
-
-  void specialAttack() override
-  {
-    std :: cout << "Wizard uses" << SPECIAL_ATTACK_NAME << "for " << magicPower << " damage" << std::endl; 
-    // Implement magic missile attack using magicPower
-  }
-};
-
-class Knight : public Player
-{
-public:
-  static const std::string SPECIAL_ATTACK_NAME;
-
-
-  int strength;
-
-  void specialAttack() override
-  {
-    std:: cout << "Knight uses " << SPECIAL_ATTACK_NAME << "for " << strength << " damage" << std:: endl;
-    // Implement sword slash attack using strength
-  }
-};
-
-class Orc : public Enemy
-{
-public:
-  static const std::string Red_Orc;
-  /* Same thing goes here */
-
-  std::vector<std::string> taunts; //= {"Noob!", "Something like this"}
-  int attackPower;
-
-  void tauntPlayer() override
-  {
-    // Choose a random taunt from the array and print it
-
-    int randomIndex = rand() % taunts.size();
-    std::cout << "The Orc taunts: " << taunts[randomIndex] << std::endl;
-
-    /* This will print a random taunt */
-  }
-
-  void normalAttack() override
-  {
-    // Implement normal attack using attackPower 
-      std::cout << " The Orc attacks and deals: " << attackPower << " damage" << std::endl;
-  }
-};
-
-class Undead : public Enemy
-{
-public:
-  static const std::string Litch;
-
-  std::vector<std::string> taunts;
-  int darkMagicPower;
-
-  void tauntPlayer() override
-  {
-      int randomIndex = rand() % taunts.size();
-      std::cout << "The Undead taunts: " << taunts[randomIndex] << std::endl;
-  }
-
-  void normalAttack() override
-  {
-      std::cout << " The Undead attacks with dark magic and deals: " << darkMagicPower << " damage" << std::endl;
-  }
-};
 
 int main()
 {
-  //For Assignment 1
+  std::cout << "Welcome to the Battle Arena!\n";
+
+  std::string playerType;
+  std::string playerName;
+  std::cout << "What type of player do you want to play as? Wizard or Knight?\n";
+  std::cin >> playerType;
+  std::cout << "What is your character name?\n";
+  std::cin >> playerName;
+
+  //default health 
+  int defaultHealth = 100;
+
+  Player *player = nullptr; // Pointer to base class Player
+
+  if (playerType == "Wizard")
+  {
+    player = new Wizard();
+    player->setName(playerName);
+    player->setHealth(defaultHealth);
+    // If you have specific attributes for Wizard, set them here
+    static_cast<Wizard *>(player)->magicPower = 50; // Example magic power
+  }
+  else if (playerType == "Knight")
+  {
+    player = new Knight();
+    player->setName(playerName);
+    player->setHealth(defaultHealth);
+    // If you have specific attributes for Knight, set them here
+    static_cast<Knight *>(player)->strength = 75; // Example strength
+  }
+  else
+  {
+    std::cout << "Invalid player type selected. Exiting game." << std::endl;
+    return 1; // Exit the program if an invalid type is entered
+  }
+  // Display Player Information
+  std::cout << "\nPlayer Information Summary:\n";
+  std::cout << "Player Type: " << playerType << "\n";
+  std::cout << "Player Name: " << playerName << "\n";
+  std::cout << "Default Health: " << defaultHealth << "\n";
+
+  std::string ready;
+  std::cout << "Are you ready to witness a battle? (yes/no)\n";
+  std::cin >> ready;
+
+  if(ready != "yes")
+  {
+    std::cout << "Exiting game." << std::endl;
+    delete player;
+    return 1;
+  }
+
+  if (ready == "yes")
+  {
+    // Generate a random enemy (Orc or Undead)
+    Enemy *enemy;
+    int randomEnemyType = rand() % 2; // Randomly choose between Orc and Undead
+    if (randomEnemyType == 0)
+    {
+      enemy = new Orc();
+    }
+    else
+    {
+      enemy = new Undead();
+    }
+
+    // Display information about the enemy
+    std::cout << "\nEnemy Information:\n";
+    if (dynamic_cast<Orc *>(enemy))
+    {
+      std::cout << "Enemy Type: Orc\n";
+      std::cout << "Health: " << enemy->getHealth() << "\n";
+      std::cout << "Attack Power: " << dynamic_cast<Orc *>(enemy)->getAttackPower() << "\n"; // dynamically cast the enemy pointer to an Orc* pointer.
+    }
+    else if (dynamic_cast<Undead *>(enemy))
+    {
+      std::cout << "Enemy Type: Undead\n";
+      std::cout << "Health: " << enemy->getHealth() << "\n";
+      std::cout << "Dark Magic Power: " << dynamic_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
+    }
+
+    // Battle logic - Implement attack sequences between player and enemy 
+
+    //try using while(true) so for normal attack and special attack if enemy taunts.
+
+    // End of battle - Display outcome and any relevant information
+
+    delete player; // Free memory allocated for player object
+    delete enemy;  // Free memory allocated for enemy object
+  }
+
+  return 0;
 }
