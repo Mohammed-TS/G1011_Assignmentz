@@ -1,6 +1,6 @@
 ---
 triple:          'arm64-apple-darwin'
-binary-path:     '/Users/sinan/Documents/Game1011_Assignmentz/G1011_Assignmentz/output/Game1011_Milestone1'
+binary-path:     '/Users/sinan/Documents/Game1011_Assignments/G1011_Assignmentz/output/Game1011_Milestone1'
 relocations:
   - { offsetInCU: 0x3B9F, offset: 0x3B9F, size: 0x8, addend: 0x0, symName: __ZNSt3__124__put_character_sequenceB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m, symObjAddr: 0x159C, symBinAddr: 0x100001FC0, symSize: 0x1F4 }
   - { offsetInCU: 0x59D5, offset: 0x59D5, size: 0x8, addend: 0x0, symName: __ZNSt3__1lsB7v160006INS_11char_traitsIcEEEERNS_13basic_ostreamIcT_EES6_PKc, symObjAddr: 0x118, symBinAddr: 0x100000B3C, symSize: 0x48 }
