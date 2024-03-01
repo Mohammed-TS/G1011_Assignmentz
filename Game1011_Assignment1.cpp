@@ -4,9 +4,9 @@
 // Student Name: Mohammed Thanaparambil Siraj ID: 101459931
 
 // TODO: Read the code and fill accordingly
-//I have made .cpp and .h files for all the classes, so we don't need to make class definitions.
-//check how the.h and .cpp works. Its the same thing just in 2 diff files, you can start adding 
-                                  // variables to classes in .h & .cpp according to the game structure for player and enemy
+// I have made .cpp and .h files for all the classes, so we don't need to make class definitions.
+// check how the.h and .cpp works. Its the same thing just in 2 diff files, you can start adding
+// variables to classes in .h & .cpp according to the game structure for player and enemy
 // there are some parts where we need to add new variables to make the game look better.
 
 #include <iostream>
@@ -16,7 +16,6 @@
 #include "Knight.cpp"
 #include "Orc.cpp"
 #include "Undead.cpp"
-
 
 int main()
 {
@@ -29,7 +28,7 @@ int main()
   std::cout << "What is your character name?\n";
   std::cin >> playerName;
 
-  //default health 
+  // default health
   int defaultHealth = 100;
 
   Player *player = nullptr; // Pointer to base class Player
@@ -65,7 +64,7 @@ int main()
   std::cout << "Are you ready to witness a battle? (yes/no)\n";
   std::cin >> ready;
 
-  if(ready != "yes")
+  if (ready != "yes")
   {
     std::cout << "Exiting game." << std::endl;
     delete player;
@@ -101,9 +100,9 @@ int main()
       std::cout << "Dark Magic Power: " << dynamic_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
     }
 
-    // Battle logic - Implement attack sequences between player and enemy 
+    // Battle logic - Implement attack sequences between player and enemy
 
-    //try using while(true) so for normal attack and special attack if enemy taunts.
+    // try using while(true) so for normal attack and special attack if enemy taunts.
 
     // End of battle - Display outcome and any relevant information
 
