@@ -10,6 +10,7 @@
 // there are some parts where we need to add new variables to make the game look better.
 
 #include <iostream>
+#include <string>
 #include "Player.cpp"
 #include "Enemy.cpp"
 #include "Wizard.cpp"
@@ -99,6 +100,40 @@ int main()
       std::cout << "Health: " << enemy->getHealth() << "\n";
       std::cout << "Dark Magic Power: " << dynamic_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
     }
+
+    std::cout << "3!" << std::endl;
+    std::cout << "2!" << std::endl;
+    std::cout << "1!" << std::endl;
+    std::cout << "Battle... Commence!" << std::endl;
+
+    enemy->tauntPlayer(); //enemy turn 
+
+    std::cout << "Turn Change!" << std::endl;
+    
+    //player turn 
+
+    std::cout << "Round 2!" << std::endl; 
+    std::cout << "Start!" << std::endl;
+
+    enemy->tauntPlayer(); //enemy turn
+
+    std::cout << "Turn change!" << std::endl; 
+
+    //player turn
+
+    std::cout << "Round 3!" << std::endl; 
+    std::cout << "Start!" << std::endl;
+
+    enemy->normalAttack(); //enemy turn
+    std::cout << "The Enemy Surges With Power!" << std::endl;
+    enemy->normalAttack();
+
+    std::cout << "Turn change!" << std::endl;
+
+    //player turn
+
+    std::cout << "Round 4!" << std::endl; 
+    std::cout << "Start!" << std::endl;
 
     // Battle logic - Implement attack sequences between player and enemy
 
