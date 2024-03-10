@@ -40,7 +40,9 @@ int main()
     player->setName(playerName);
     player->setHealth(defaultHealth);
     // If you have specific attributes for Wizard, set them here
-    static_cast<Wizard *>(player)->magicPower = 50; // Example magic power
+    std::cout << "Basic Attack: " << static_cast<Wizard *>(player)->getBasicPower() << "\n"; // Statically cast the player pointer to an Wizard* pointer. 
+    std::cout << "Dragon Flame: " << static_cast<Wizard *>(player)->getMagicPower() << "\n"; 
+    // Example magic power
   }
   else if (playerType == "Knight")
   {
@@ -48,7 +50,9 @@ int main()
     player->setName(playerName);
     player->setHealth(defaultHealth);
     // If you have specific attributes for Knight, set them here
-    static_cast<Knight *>(player)->strength = 75; // Example strength
+    std::cout << "Basic Attack: " << static_cast<Knight *>(player)->getBasicPower() << "\n";
+    std::cout << "Sword Slash: " << static_cast<Knight *>(player)->getStrength() << "\n";
+    // Example strength
   }
   else
   {
@@ -124,7 +128,7 @@ int main()
     std::cout << "Turn Change!" << std::endl;
     std::cin.get();
     
-    //player turn
+    player->normalAttack();//player turn
     std::cin.get(); 
 
     std::cout << "Round 2!" << std::endl; 
@@ -137,7 +141,8 @@ int main()
     std::cout << "Turn Change!" << std::endl; 
     std::cin.get();
 
-    //player turn
+
+    player->specialAttack();//player turn
     std::cin.get();
 
     std::cout << "Round 3!" << std::endl; 
@@ -154,17 +159,22 @@ int main()
     std::cout << "Turn Change!" << std::endl;
     std::cin.get();
 
-    //player turn
+
+    player->specialAttack();//player turn
     std::cin.get();
 
     std::cout << "Round 4!" << std::endl; 
     std::cout << "Start!" << std::endl;
     std::cin.get();
 
+
     enemy->tauntPlayer(); //enemy turn
     std::cin.get();
+    enemy->tauntPlayer(); // enemy turn 
 
-    //player turn
+    std::cout << "Turn change!" << std::endl;
+
+    player->specialAttack();
     std::cin.get();
 
     std::cout << "Announcer: The oppenent falls! " << playerName <<" Wins!" << std::endl;
