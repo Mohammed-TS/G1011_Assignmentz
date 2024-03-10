@@ -105,51 +105,79 @@ int main()
       std::cout << "Dark Magic Power: " << dynamic_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
     }
 
+    std::cout << "Humanity and Demons have been at war for centuries…\n"  
+    << "Countless lives have been lost on both ends\n" 
+    << "With no end to the bloody conflict in sight, the Human King proposes a solution to problem\n" 
+    << "Every four year a tournament the likes the world has never seen will take place to settle disputes\n" 
+    << "The idea was so crazy that it worked, little by little the two groups of people get together for friendly competition instead of blood-socked battle\n" 
+    << "The following is a recording of the championship battle taking place 10,000 years since the founding of the competition in the year 2554" << std::endl;
+    std::cin.get();
+
     std::cout << "3!" << std::endl;
+    std::cin.get();
     std::cout << "2!" << std::endl;
+    std::cin.get();
     std::cout << "1!" << std::endl;
+    std::cin.get();
     std::cout << "Battle... Commence!" << std::endl;
+    std::cin.get();
 
     enemy->tauntPlayer(); //enemy turn 
+    std::cin.get();
 
     std::cout << "Turn Change!" << std::endl;
+    std::cin.get();
     
-    player->normalAttack();//player turn 
+    player->normalAttack();//player turn
+    std::cin.get(); 
 
     std::cout << "Round 2!" << std::endl; 
     std::cout << "Start!" << std::endl;
+    std::cin.get();
 
     enemy->tauntPlayer(); //enemy turn
+    std::cin.get();
 
-    std::cout << "Turn change!" << std::endl; 
+    std::cout << "Turn Change!" << std::endl; 
+    std::cin.get();
+
 
     player->specialAttack();//player turn
+    std::cin.get();
 
     std::cout << "Round 3!" << std::endl; 
     std::cout << "Start!" << std::endl;
+    std::cin.get();
 
     enemy->normalAttack(); //enemy turn
-    std::cout << "The Enemy Surges With Power!" << std::endl;
+    std::cin.get();
+    std::cout << "The Enemy surges with power!" << std::endl;
+    std::cin.get();
     enemy->normalAttack();
+    std::cin.get();
 
-    std::cout << "Turn change!" << std::endl;
+    std::cout << "Turn Change!" << std::endl;
+    std::cin.get();
+
 
     player->specialAttack();//player turn
+    std::cin.get();
 
     std::cout << "Round 4!" << std::endl; 
     std::cout << "Start!" << std::endl;
+    std::cin.get();
 
+
+    enemy->tauntPlayer(); //enemy turn
+    std::cin.get();
     enemy->tauntPlayer(); // enemy turn 
 
     std::cout << "Turn change!" << std::endl;
 
     player->specialAttack();
+    std::cin.get();
 
-    // Battle logic - Implement attack sequences between player and enemy
-
-    // try using while(true) so for normal attack and special attack if enemy taunts.
-
-    // End of battle - Display outcome and any relevant information
+    std::cout << "Announcer: The oppenent falls! " << playerName <<" Wins!" << std::endl;
 
     delete player; // Free memory allocated for player object
     delete enemy;  // Free memory allocated for enemy object
