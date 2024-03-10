@@ -4,11 +4,11 @@
 class Wizard : public Player {
 private:
   int magicPower;  
-  int normalPower; 
+  int basicPower; 
 public:
   Wizard();
   void normalAttack() override;
   void specialAttack() override;
   int getMagicPower();
-  int getNormalPower(); 
+  int getBasicPower(); 
 };

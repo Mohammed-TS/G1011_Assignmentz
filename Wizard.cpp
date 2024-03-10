@@ -5,11 +5,11 @@
 Wizard::Wizard(){
   setHealth(100);
   magicPower = 100; 
-  normalPower = 85; 
+  basicPower = 85; 
 }
 
 void Wizard::normalAttack() {
-  std::cout << "Wizard performs a basic attack." << normalPower << "does damage"<< std::endl;
+  std::cout << "Wizard performs a  attack." << basicPower << "does damage"<< std::endl;
 }
 void Wizard::specialAttack() {
   std::cout << "Wizard uses Dragon Flame to attack " << magicPower << " does damage" << std::endl;  
@@ -20,6 +20,6 @@ int Wizard::getMagicPower(){
   return magicPower; 
 }
 
-int Wizard::getNormalPower(){
-  return normalPower; 
+int Wizard::getBasicPower(){
+  return basicPower; 
 }
