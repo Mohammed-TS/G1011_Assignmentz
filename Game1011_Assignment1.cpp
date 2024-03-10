@@ -173,6 +173,7 @@ int main()
     enemy->tauntPlayer(); // enemy turn 
 
     std::cout << "Turn change!" << std::endl;
+    std::cin.get();
 
     player->specialAttack();
     std::cin.get();
