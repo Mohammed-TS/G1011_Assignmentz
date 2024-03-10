@@ -39,20 +39,12 @@ int main()
     player = new Wizard();
     player->setName(playerName);
     player->setHealth(defaultHealth);
-    // If you have specific attributes for Wizard, set them here
-    std::cout << "Basic Attack: " << static_cast<Wizard *>(player)->getBasicPower() << "\n"; // Statically cast the player pointer to an Wizard* pointer. 
-    std::cout << "Dragon Flame: " << static_cast<Wizard *>(player)->getMagicPower() << "\n"; 
-    // Example magic power
   }
   else if (playerType == "Knight")
   {
     player = new Knight();
     player->setName(playerName);
     player->setHealth(defaultHealth);
-    // If you have specific attributes for Knight, set them here
-    std::cout << "Basic Attack: " << static_cast<Knight *>(player)->getBasicPower() << "\n";
-    std::cout << "Sword Slash: " << static_cast<Knight *>(player)->getStrength() << "\n";
-    // Example strength
   }
   else
   {
@@ -64,6 +56,15 @@ int main()
   std::cout << "Player Type: " << playerType << "\n";
   std::cout << "Player Name: " << playerName << "\n";
   std::cout << "Default Health: " << defaultHealth << "\n";
+  if (playerType == "Wizard"){
+    std::cout << "Basic Attack: " << static_cast<Wizard *>(player)->getBasicPower() << "\n"; // Statically cast the player pointer to an Wizard* pointer. 
+    std::cout << "Dragon Flame: " << static_cast<Wizard *>(player)->getMagicPower() << "\n"; 
+  }
+  else if (playerType == "Knight"){
+    std::cout << "Basic Attack: " << static_cast<Knight *>(player)->getBasicPower() << "\n";
+    std::cout << "Sword Slash: " << static_cast<Knight *>(player)->getStrength() << "\n";
+  }
+
 
   std::string ready;
   std::cout << "Are you ready to witness a battle? (yes/no)\n";
