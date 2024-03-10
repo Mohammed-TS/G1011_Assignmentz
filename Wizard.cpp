@@ -1,13 +1,25 @@
 #include "WIZARD_H.h"
 #include <iostream>
+#include <vector>
 
-void Wizard::normalAttack() {
-  std::cout << "Wizard performs a basic attack." << std::endl;
+Wizard::Wizard(){
+  setHealth(100);
+  magicPower = 100; 
+  normalPower = 85; 
 }
 
-  //call static special attack name in.h  , and assign it here  
-
+void Wizard::normalAttack() {
+  std::cout << "Wizard performs a basic attack." << normalPower << "does damage"<< std::endl;
+}
 void Wizard::specialAttack() {
-  std::cout << "Wizard uses Magic Missile of  " << magicPower << " does damage" << std::endl;  //replace magic missile with special attack name//
+  std::cout << "Wizard uses Dragon Flame to attack " << magicPower << " does damage" << std::endl;  
                                                                                                 //and call it in int main according to gameplay//
+}
+
+int Wizard::getMagicPower(){
+  return magicPower; 
+}
+
+int Wizard::getNormalPower(){
+  return normalPower; 
 }

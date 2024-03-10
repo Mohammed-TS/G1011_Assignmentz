@@ -2,9 +2,13 @@
 #include "Player.h"
 
 class Wizard : public Player {
+private:
+  int magicPower;  
+  int normalPower; 
 public:
-  int magicPower;
-
+  Wizard();
   void normalAttack() override;
   void specialAttack() override;
+  int getMagicPower();
+  int getNormalPower(); 
 };

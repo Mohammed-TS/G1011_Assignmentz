@@ -2,9 +2,11 @@
 #include "Player.h"
 
 class Knight : public Player {
-public:
+private:
   int strength;
-
+public:
+  Knight(); 
   void normalAttack() override;
   void specialAttack() override;
+  int getStrength();
 };
