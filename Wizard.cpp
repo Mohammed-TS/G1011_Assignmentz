@@ -9,7 +9,7 @@ Wizard::Wizard(){
 }
 
 void Wizard::normalAttack() {
-  std::cout << "Wizard performs a  attack." << basicPower << "does damage"<< std::endl;
+  std::cout << "Wizard performs a attack:" << basicPower << "does damage"<< std::endl;
 }
 void Wizard::specialAttack() {
   std::cout << "Wizard uses Dragon Flame to attack " << magicPower << " does damage" << std::endl;  

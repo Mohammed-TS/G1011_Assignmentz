@@ -3,12 +3,6 @@
 // Student Name: Rumaisa Shoukat ID: 101524730
 // Student Name: Mohammed Thanaparambil Siraj ID: 101459931
 
-// TODO: Read the code and fill accordingly
-// I have made .cpp and .h files for all the classes, so we don't need to make class definitions.
-// check how the.h and .cpp works. Its the same thing just in 2 diff files, you can start adding
-// variables to classes in .h & .cpp according to the game structure for player and enemy
-// there are some parts where we need to add new variables to make the game look better.
-
 #include <iostream>
 #include <string>
 #include "Player.cpp"
