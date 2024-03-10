@@ -9,11 +9,11 @@ Knight::Knight(){
 }
 
 void Knight::normalAttack() {
-  std::cout << "Knight performs a basic attack dealing " << basicPower << " damage" << std::endl;
+  std::cout << "Knight performs a basic attack dealing: " << basicPower << " damage" << std::endl;
 }
 
 void Knight::specialAttack() {
-  std::cout << "Knight uses Sword Slash dealing " << strength << " damage" << std::endl;
+  std::cout << "Knight uses Sword Slash dealing: " << strength << " damage" << std::endl;
 }
 
 int Knight::getStrength(){
