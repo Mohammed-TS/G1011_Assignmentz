@@ -4,6 +4,8 @@
 // Student Name: Mohammed Thanaparambil Siraj ID: 101459931
 
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include "Player.cpp"
 #include "Enemy.cpp"
@@ -74,7 +76,9 @@ int main()
   if (ready == "yes")
   {
     // Generate a random enemy (Orc or Undead)
-    Enemy *enemy;
+    Enemy *enemy = nullptr;
+    // Random seed for better randomness
+    srand(static_cast<unsigned>(time(0)));
     int randomEnemyType = rand() % 2; // Randomly choose between Orc and Undead
     if (randomEnemyType == 0)
     {
@@ -97,7 +101,7 @@ int main()
     {
       std::cout << "Enemy Type: Undead\n";
       std::cout << "Health: " << enemy->getHealth() << "\n";
-      std::cout << "Dark Magic Power: " << dynamic_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
+      std::cout << "Dark Magic Power: " << static_cast<Undead *>(enemy)->getDarkMagicPower() << "\n"; // same here
     }
 
     std::cout << "Humanity and Demons have been at war for centuries…\n"  
