@@ -165,14 +165,8 @@ int main()
   if (ready == "yes")
   {
     // Generate a random enemy (Orc or Undead)
-<<<<<<< Updated upstream
     Enemy *enemy;
-=======
     EnemyData enemyInfo;
-    Enemy *enemy = nullptr;
-    // Random seed for better randomness
-    srand(static_cast<unsigned>(time(0)));
->>>>>>> Stashed changes
     int randomEnemyType = rand() % 2; // Randomly choose between Orc and Undead
     if (randomEnemyType == 0)
     {
